@@ -49,8 +49,52 @@ cantidad_ausentes = 0   # Aquí debe contar cuantos ausentes hubo
 # Realice aquí el bucle para recorrer todas las notas
 # y cacular la sumatoria
 
+for nota in notas:
+    if nota < 0:
+        cantidad_ausentes= cantidad_ausentes + 1
+    elif nota > 0 and nota < 60:
+        cantidad_notas = cantidad_notas + 1
+        sumatoria = sumatoria + nota
+        print ("la nota {} es F".format(notas.index(nota)+1))
+    elif nota >= 60 and nota < 70:
+        cantidad_notas = cantidad_notas + 1
+        sumatoria = sumatoria + nota
+        print ("la nota {} es D".format(notas.index(nota)+1))
+    elif nota >= 70 and nota < 80:
+        cantidad_notas = cantidad_notas + 1
+        sumatoria = sumatoria + nota
+        print ("la nota {} es C".format(notas.index(nota)+1))
+    elif nota >= 80 and nota < 90:
+        cantidad_notas = cantidad_notas + 1
+        sumatoria = sumatoria + nota
+        print ("la nota {} es B".format(notas.index(nota)+1))
+    else: 
+        cantidad_notas = cantidad_notas + 1
+        sumatoria = sumatoria + nota
+        print ("la nota {} es A".format(notas.index(nota)+1))
+
+        
+
 # Terminado el bucle calcule el promedio como
-# promedio = sumatoria / cantidad_notas
+promedio = sumatoria / cantidad_notas
+
+#print ("El promedio de las notas es {}".format(promedio))
+
+if promedio > 0 and promedio < 60:
+    print ("El promedio de notas es F")
+elif  promedio >= 60 and promedio < 70:
+    print ("El promedio de notas es D")
+elif promedio >= 70 and promedio < 80:
+    print ("El promedio de notas es C")
+elif promedio >= 80 and promedio < 90:
+    print ("El promedio de notas es B")
+else: 
+    print ("El promedio de notas es A")
+
+
+print ("La cantidad de ausentes es: {}".format(cantidad_ausentes))
+
+
 
 # Utilice la nota promedio calculada y transformela
 # a calificación con letras, imprima en pantalla el resultado

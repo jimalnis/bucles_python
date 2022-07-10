@@ -35,3 +35,34 @@ alguno de lo soportados o no es la palabra "FIN".
 
 print("Mi Calculadora (^_^)")
 # Empezar aquí la resolución del ejercicio
+
+x = ""
+while x != "FIN":
+    primer_numero = float(input("Ingrese el primer número:  "))
+    segundo_numero= float(input("Ingrese el segundo número:  "))
+    operacion = input("Ingrese la operación a realizar, para finalizar ingrese FIN:  ").upper()
+    while operacion == "+" or "-" or "*" or "/" or "**" or "FIN":
+        if operacion == "+":
+            print (primer_numero + segundo_numero)
+            break
+        elif operacion == "-":
+            print (primer_numero - segundo_numero)
+            break
+        elif operacion == "*":
+            print (primer_numero * segundo_numero)
+            break
+        elif operacion == "/":
+            print (primer_numero / segundo_numero)
+            break
+        elif operacion == "**":
+            print (primer_numero ** segundo_numero)
+            break            
+        elif operacion == "FIN":
+            print (0)
+            x = "FIN"
+            break
+        else:
+            print ("ERROR!! INGRESE UNA OPERACION CORRECTA")
+            operacion = input("Ingrese la operación a realizar, para finalizar ingrese FIN: ").upper()
+
+

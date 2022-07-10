@@ -50,7 +50,25 @@ temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el pr
 temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
 
 # Colocar el bucle aqui......
+for temperatura in temp_dataloger:
+    if (temperatura_max is None) or (temperatura > temperatura_max):
+        temperatura_max= temperatura
+    if temperatura_min == None or temperatura < temperatura_min:
+        temperatura_min = temperatura
+    temperatura_sumatoria= temperatura_sumatoria + temperatura
+    temperatura_len = temperatura_len + 1
+    
+print ("la temperatura máxima es: {}". format (temperatura_max))
+print ("la temperatura minima es: {}". format (temperatura_min))
+temperatura_promedio= temperatura_sumatoria / temperatura_len
+print ("la temperatura promedio es: {}". format (temperatura_promedio))   
+maximo_lista = max (temp_dataloger)
+minimo_lista = min (temp_dataloger)   
 
+print ("El Maximo con el metodo max es {}". format(maximo_lista))  
+print ("El Minimo con el metodo min es {}". format(minimo_lista)) 
+
+        
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
 # usando la función "max" y la función "min" de python
@@ -63,7 +81,8 @@ temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la
 # Corroboren los resultados de temperatura_sumatoria
 # usando la función "sum"
 # función "sum" --> https://www.w3schools.com/python/ref_func_sum.asp
-
+print (f"la sumatoria de las temperaturas es: {temperatura_sumatoria}")
+print (sum (temp_dataloger))
 '''
 Una vez que tengamos nuestros valores correctamente calculados debemos
 determinar en que epoca del año nos encontramos en Buenos Aires utilizando
@@ -83,3 +102,14 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+
+if temperatura_min >= 19 and temperatura_max <= 28 :
+    print("las temperaturas corresponde al verano")
+elif temperatura_min >= 11 and temperatura_max <= 20 :
+    print("las temperaturas corresponden al otoño")
+elif temperatura_min >= 4 and temperatura_max <= 14 :
+    print("las temperaturas corresponden al invierno")
+elif temperatura_min >= 10 and temperatura_max <= 24 :
+    print("las temperaturas corresponden a la primavera")      
+else:
+    print("Las temperaturas no corresponden a ninguna estacion")
